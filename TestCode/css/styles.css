@@ -1,0 +1,12 @@
+.redColor{
+    color: red;
+}
+.bigText{
+    font-size: 30px;
+}
+.hide{
+    display: none;
+}
+.disable{
+    pointer-events: none;
+}

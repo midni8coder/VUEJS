@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punchbag Game - Vue JS</title>
+    <script src="./js/vue.js"></script>
+    <link rel="stylesheet" href="./css/punchbag.css">
+</head>
+<body>
+    <div id="app">
+        <div id="bag" v-bind:class="{burst:ended}">
+        </div>
+        
+        <div id="health">
+            <div v-bind:style="{width: health +'%'}">
+               <p v-if="health>0"> {{health + '%'}}</p>
+            </div>
+       
+    </div>
+        <div id="controls">
+            <button v-show="!ended" @click="punch">Punch</button>
+            <button @click="restart">Restart</button>
+        </div>
+    </div>
+    <script src="./js/punchbag.js"></script>
+</body>
+</html>

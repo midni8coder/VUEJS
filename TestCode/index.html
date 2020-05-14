@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Tutorials</title>
+    <script src="./js/vue.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="dyamicCSS">
+            <h2>Dynamic CSS</h2>
+            <h3>Example 1</h3>
+            <button @click="colorClass = !colorClass">toggle color</button>
+            <button @click="bigText = !bigText">toggle size</button>
+            <div v-bind:class="classes">
+                <span>sample text here</span>
+            </div>
+            <h3>Example 2</h3>
+
+            <!-- <span v-model="description">{{description}}</span><br> -->
+           
+            <input v-bind:class="editMode" type="text" v-model="description"><br>
+            <button @click="hideClass = !hideClass">Edit</button><br><br>
+        </div>
+        <div id="listItems">
+            <ul>
+                <li v-for="item in items" :key="item.key">
+                    {{item.message}}
+                </li>
+            </ul>
+            <template v-for="item in items">
+                <div v-for="(value,key) of item">
+                    {{key}}  - {{value}}
+                </div>
+            </template>
+        </div>
+        <div id="conditions">
+            <button @click="error = !error">Toggle Error</button>
+            <button @click="success = !success">Toggle Success</button>
+            <!-- <p v-if="error">Error text</p>
+            <p v-else-if="success">Success text</p> -->
+            <p v-show="error">Error text</p>
+            <p v-show="success">Success text</p>
+        </div>
+    </div>
+    <script src="./js/appcode.js"></script>
+</body>
+</html>
